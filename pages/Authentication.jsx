@@ -14,7 +14,6 @@ import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import { register, login, reset } from "../features/auth/authSlice";
 import { isEmail, isStrongPassword } from "validator";
-import { getYTVideos } from "../lib/Videos";
 
 export default function Authentication() {
   const [formData, setFormData] = useState({
@@ -137,15 +136,6 @@ export default function Authentication() {
   };
 
   useEffect(() => {
-    async function getVids(type) {
-      const result = await getYTVideos(type);
-      console.log("mmm", result);
-    }
-    getVids("movie");
-    if (isError) {
-      console.error(message);
-      return;
-    }
     if (user?.hasOwnProperty("email")) {
       dispatch(reset());
       router.push("/");
