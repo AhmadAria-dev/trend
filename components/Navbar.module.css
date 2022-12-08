@@ -1,0 +1,19 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  background-color: var(--darkest);
+  width: 100%;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+}
+
+.logo {
+  font-size: 2.5rem;
+  padding: 1rem;
+  line-height: 2.5rem;
+  height: 50px;
+  overflow: hidden;
+  user-select: none;
+}

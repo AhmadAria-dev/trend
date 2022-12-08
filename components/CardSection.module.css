@@ -1,0 +1,43 @@
+.portrait {
+  margin-top: 0.5rem;
+}
+.portrait:first-child {
+  margin-top: 4rem;
+}
+
+@media screen and (min-width: 1000px) {
+  .portrait {
+    width: 1200px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.landscape,
+.portrait {
+  display: block;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+}
+.portraitCards {
+  width: 100%;
+  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.portraitCards::-webkit-scrollbar {
+  display: none;
+}
+
+.landscapeCards {
+  display: inline;
+}
+
+.heading {
+  font-size: 1.2rem;
+  padding: 1rem 1rem 0 0;
+  margin: 0;
+}

@@ -1,0 +1,107 @@
+.portrait,
+.landscape {
+  position: relative;
+  margin: 0.5%;
+  cursor: pointer;
+}
+
+.portrait {
+  min-width: 150px;
+  max-width: 250px;
+  width: 19%;
+  aspect-ratio: 9/16;
+}
+
+.landscape {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  min-width: 400px;
+  aspect-ratio: 3;
+}
+
+.video {
+  background-color: var(--darker);
+}
+
+.portrait .video {
+  aspect-ratio: 9/16;
+  height: 100%;
+  left: 0;
+  z-index: -1;
+  background-position: center;
+  background-size: 320%;
+  transition: all 0.25s ease-in;
+}
+.portrait .videoInfo:hover + .video,
+.video:hover {
+  filter: brightness(0.6) grayscale(1);
+}
+
+.landscape .video {
+  aspect-ratio: 16/9;
+  margin: 0;
+  padding: 0;
+  float: left;
+  background-position: center;
+  background-size: 100%;
+  transition: all 0.25s ease-in;
+}
+
+.landscape .videoInfo {
+  float: right;
+}
+.landscape .videoInfo p:first-child {
+  font-size: 120%;
+  line-height: 1.5rem;
+}
+
+@media screen and (max-width: 800px) {
+  .landscape .videoInfo p:first-child {
+    font-size: 0.6rem;
+    line-height: 1.5rem;
+  }
+}
+
+.portrait .videoInfo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  padding: 0.5rem;
+}
+
+.landscape .videoInfo {
+  width: 45%;
+}
+
+.videoInfo p {
+  margin: 0.5rem 0 0 0;
+  padding: 5px;
+  line-height: 1.2rem;
+  color: var(--lightest);
+  text-shadow: 0 0 2px var(--darkest), 0 0 2px var(--darkest),
+    0 0 2px var(--darkest);
+  font-size: 80%;
+  font-weight: 900;
+}
+
+.portrait .videoInfo p {
+  text-align: center;
+}
+
+.portrait .videoInfo p:first-child {
+  line-height: 150%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--blue);
+  font-size: 150%;
+  margin-top: 2rem;
+}
+
+.portrait .videoInfo p:last-child {
+  height: 1.2rem;
+}

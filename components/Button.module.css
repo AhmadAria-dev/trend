@@ -1,0 +1,32 @@
+.btnRed {
+  background-color: var(--red);
+}
+
+.btnBlue {
+  background-color: var(--blue);
+}
+
+.btnRed,
+.btnBlue {
+  outline: none;
+  border: 2px solid var(--darker);
+  width: 200px;
+  height: 43px;
+  font-size: medium;
+  font-family: IranNastaliq;
+  color: var(--lightest);
+  margin: 5px 50%;
+  transform: translateX(50%);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.btnRed:focus,
+.btnBlue:focus {
+  border: 2px solid var(--darkest);
+}
+
+.btnRed:hover,
+.btnBlue:hover {
+  filter: contrast(2);
+}
