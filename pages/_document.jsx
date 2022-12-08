@@ -10,6 +10,10 @@ export default function Document() {
           as="font"
           crossOrigin="anonymous"
         />
+        <meta
+          name="description"
+          content="Watch latest movies and music videos"
+        />
       </Head>
       <body>
         <Main></Main>

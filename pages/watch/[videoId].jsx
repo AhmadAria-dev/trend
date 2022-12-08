@@ -35,7 +35,7 @@ export default function Watch() {
       `https://www.youtube.com/embed/${router.query.videoId}?enablejsapi=1`
     );
     try {
-      dispatch(getVideoById({ id: router.query.videoId, user: user.userId }));
+      dispatch(getVideoById({ id: router.query.videoId, user: user?.userId }));
       if (isSuccess) dispatch(reset());
       dispatch(getMoreVideos());
       if (isSuccess) dispatch(resetMoreVideos());
@@ -43,14 +43,18 @@ export default function Watch() {
     } catch (error) {
       dispatch(resetVideo());
     }
-  }, [dispatch, isError, user, url]);
+  }, [dispatch, isError, user, url, router.query.videoId]);
   return (
     <>
       <Head>
         <title>{video && video.name}</title>
+        <meta
+          name="description"
+          content="Watch latest movies and music videos"
+        />
       </Head>
       <Navbar />
-      {isLoading && <Loader />}
+      {(isLoading || !moreVideos || !video) && <Loader />}
       <div className={layout}>
         {video && (
           <main className={container}>
@@ -59,6 +63,8 @@ export default function Watch() {
               <ReactPlayer
                 controls={true}
                 className={sVideo}
+                sandbox="allow-presentation"
+                allowFullScreen={true}
                 url={url}
                 width="100%"
                 height="100%"
