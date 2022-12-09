@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <link
           rel="preload"
-          href="/fonts/IranNastaliq"
+          href="/fonts/IranNastaliq.ttf"
           as="font"
           crossOrigin="anonymous"
         />

@@ -44,7 +44,7 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {(isLoading || musics.length <= 0 || movies.length <= 0) && <Loader />}
+      {(isLoading || !musics || !movies) && <Loader />}
       <Navbar />
       <main className={container}>
         <CardSection data={movies} type={1} title="فلم های جدید" />

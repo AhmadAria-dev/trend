@@ -11,9 +11,7 @@ export default async function addVideos(req, res) {
       let response = {};
       const { videoId, name, description, imgUrl } = data;
       if (!videoId || !name || !description || !imgUrl)
-        throw new Error(
-          `All fields are required.\n VideoId: ${videoId}\nName: ${name}\nDescription: ${description}\nImage: ${imgUrl}`
-        );
+        throw new Error("All fields are required.");
       const exists = await Videos.findOne({ videoId });
       if (!exists) {
         response = await Videos.create(data);
